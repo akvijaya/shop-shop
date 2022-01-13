@@ -25,6 +25,7 @@ const Cart = () => {
             });
         }
     }, [data]);
+    
 
     useEffect(() => {
         async function getCart() {
@@ -39,16 +40,6 @@ const Cart = () => {
 
     function toggleCart() {
         dispatch({ type: TOGGLE_CART });
-    }
-
-    if (!state.cartOpen) {
-        return (
-            <div className="cart-closed" onClick={toggleCart}>
-                <span
-                    role="img"
-                    aria-label="trash">🛒</span>
-            </div>
-        );
     }
 
     function calculateTotal() {
@@ -73,14 +64,15 @@ const Cart = () => {
         });
     }
 
-    useEffect(() => {
-        if (data) {
-            stripePromise.then((res) => {
-                res.redirectToCheckout({ sessionId: data.checkout.session });
-            });
-        }
-    }, [data]);
-
+    if (!state.cartOpen) {
+        return (
+            <div className="cart-closed" onClick={toggleCart}>
+                <span
+                    role="img"
+                    aria-label="trash">🛒</span>
+            </div>
+        );
+    }
 
     return (
         <div className="cart">
