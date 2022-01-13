@@ -22,10 +22,11 @@ function Success() {
 
             setTimeout(() => {
                 window.location.assign('/');
-              }, 3000);
+            }, 3000);
         }
 
-        saveOrder();
+        saveOrder()
+        
     }, [addOrder]);
 
 
