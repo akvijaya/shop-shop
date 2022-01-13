@@ -1,7 +1,7 @@
 import React, { useEffect, useMutation } from 'react';
 import { ADD_ORDER } from '../utils/mutations';
 import { idbPromise } from "../utils/helpers";
-import Jumbotron from './components/Jumbotron';
+import Jumbotron from '../components/Jumbotron';
 
 function Success() {
     const [addOrder] = useMutation(ADD_ORDER);
