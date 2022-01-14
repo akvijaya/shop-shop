@@ -25,7 +25,7 @@ function Success() {
             }, 3000);
         }
 
-        saveOrder()
+        saveOrder();
         
     }, [addOrder]);
 
